@@ -1,0 +1,15 @@
+{
+  "name": "projects-dep-check",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "2.3.0",
+    "npm-check": "5.5.2"
+  }
+}
