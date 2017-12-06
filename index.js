@@ -16,6 +16,7 @@ const projects = config.map(dir => ({ dir, name: path.basename(dir) }));
 
 log('-- Start checking projects dependencies --');
 (async()=>{try{
+	const resume = [];
 	for(const project of projects){
 		const {dir, name} = project;
 
@@ -47,6 +48,17 @@ log('-- Start checking projects dependencies --');
 			}
 		});
 
-		failures ? error(`❌`) : success(`👍`);
+		if (!failures) {
+			resume.push(`${name} 👍`);
+			success(`No issue detected`);
+		}
+		else{
+			resume.push(`${name} ❌`);
+		}
 	}
+
+	log([
+		`\n------------\n-- Resume --\n------------`,
+		...resume.map(st => ` + ${st}`)
+	].join('\n'));
 } catch (err) { error(err.message); log(err.stack); }})();
