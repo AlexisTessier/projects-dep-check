@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "chalk": "2.3.2",
-    "npm-check": "5.5.2"
+    "chalk": "2.4.1",
+    "npm-check": "5.8.0"
   }
 }
